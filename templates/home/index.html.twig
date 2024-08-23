@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<h1>
+    Page Home
+</h1>
+
+<div class="example-wrapper">
+   
+{{ form_start(form) }}
+{{ form_label(form) }}    
+{{ form_widget(form) }}                                                                                                                                                              
+{{ form_end(form) }}
+
+<script>
+    document.getElementById('checkbox').addEventListener('change', function() {
+        if (this.checked) {
+            window.location.href = "{{ path('app_contact') }}";
+        }
+    });
+</script>
+</div>                                                              
+{% endblock %}

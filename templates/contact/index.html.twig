@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<h1>
+    Page Contact
+</h1>
+
+<div class="example-wrapper">
+    {{ form_start(form) }}
+    {{ form_label(form) }}    
+    {{ form_widget(form) }}                                                                                                                                                              
+    {{ form_end(form) }}
+</div>
+
+<script>
+    document.getElementById('checkbox').addEventListener('change', function() {
+        if (this.checked) {
+            window.location.href = "{{ path('app_home') }}";
+        }
+        
+    });
+    
+    if (window.location.pathname === "{{ path('app_contact') }}")
+    {
+        document.getElementById('checkbox').checked = true;
+    }
+    document.getElementById('checkbox').addEventListener('change', function() {
+        if (!this.checked) {
+            window.location.href = "{{ path('app_home') }}";
+        }
+        
+    });
+
+</script>
+{% endblock %}
